@@ -11,12 +11,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-
 const DB_USERNAME = 'YOUR_USERNAME';
 const DB_PASSWORD = 'YOUR_PASSWORD';
 const DB_NAME = 'YOUR_DB_NAME';
 const AUTH_SECRET = 'YOUR_SECRET';
-
 
 //change these connectionDetails according to your MongoDB instance eg if using cloud DB like Atlas or localhost
 //for atlas cloud db, but not working, need to use right protocol ie mongdb+srv !
@@ -30,7 +28,7 @@ mongoose.connect(connectionDetails, {
 })
 
 mongoose.connection.once('open', () => {
-    console.log(`Connected to database: ${databaseName}`);
+    console.log(`Connected to database: ${DB_NAME}`);
 })
 
 const jwtAuth = expressjwt( {
