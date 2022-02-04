@@ -24,8 +24,14 @@ const connectionDetails = 'mongodb+srv://' + DB_USERNAME + ':' + DB_PASSWORD + '
 mongoose.connect(connectionDetails, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: DB_NAME
+    dbName: DB_NAME,
+    //to get rid of deprecated warnings and to use findOneAndUpdate
+    useFindAndModify: false
 })
+    //LATER check out these other optoins too
+    // keepAlive: true,
+    // useNewUrlParser: true,
+    // useCreateIndex: true,
 
 mongoose.connection.once('open', () => {
     console.log(`Connected to database: ${DB_NAME}`);
