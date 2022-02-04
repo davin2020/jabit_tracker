@@ -237,7 +237,64 @@ module.exports = new GraphQLObjectType({
                     return new Error(`Could not add new goal for user with goal name ${args.name}`)
                 }
             }
+        },
+
+        //also need to update Total Points for User collection
+        updatePointsForUserGoal: {
+            type: GoalType,
+            description: 'Update points for Goal',
+            args: {
+                id: {
+                    type: new GraphQLNonNull(GraphQLID),
+                    description: 'Goal ID'
+                },
+                points: {
+                    type: new GraphQLNonNull(GraphQLInt),
+                    description: 'Points to Add'
+                }
+            },
+            async resolve(parent, args)
+            {
+                // let foundUserByID = await GoalModel.findById(args.id)
+                // console.log('foundUserByID : ' + foundUserByID);
+
+            //how to find n update a recorrd in mongo?
+            //how to find n update a recorrd in mongo?
+            // const existingUserGoal = await GoalModel.findOne({ "_id": args.id})
+            // updatedPoints = 
+            const filter = { _id: args.id };
+            // const update = { points: args.points };
+            console.log('hello id: ' + args.id);
+
+            const update = { $inc: {points: args.points } };
+            console.log('hello points: ' + args.points);
+            // `doc` is the document _after_ `update` was applied because of
+            // `new: true`
+            //depreacted findOneAndUpdate with findAndModify
+            
+            // db not being updated and null being returned 
+             // let validNewGoal = await newGoal.save( );
+             // what does findOneAndUpdate return??
+            let updateddoc = await GoalModel.findOneAndUpdate(filter, update, {
+                returnNewDocument: true,
+                new: true,
+                useFindAndModify: false
+            });
+
+            if (!updateddoc) {
+                    console.log('FISH')
+                    console.log(updateddoc); //this  s null 
+                }
+
+            console.log(updateddoc._id); // 'Jean-Luc Picard'
+            console.log('points: ' + updateddoc.points); // 59
+            return updateddoc;
+            }
         }
 
     }
-});
+})
+
+// also need t hese mutations
+// completeGoalForUser
+// deleteeGoalForUser
