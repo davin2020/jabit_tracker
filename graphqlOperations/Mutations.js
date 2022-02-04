@@ -2,21 +2,25 @@ const graphql = require('graphql');
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
 
+//this is allowable data types in mutations below
 const {
     GraphQLObjectType,
     GraphQLList,
     GraphQLNonNull,
     GraphQLString,
-    GraphQLInt
+    GraphQLInt,
+    GraphQLID,
+    GraphQLBoolean
 } = graphql;
 
 const AUTH_SECRET = 'YOUR_SECRET';
 
 // GraphQL Types
 const UserType = require('../graphqlTypes/UserType');
-
+const GoalType = require('../graphqlTypes/GoalType');
 // Mongoose Models
 const UserModel = require('../mongoModels/UserModel');
+const GoalModel = require('../mongoModels/GoalModel');
 
 module.exports = new GraphQLObjectType({
     name: 'Mutation',
@@ -65,6 +69,7 @@ module.exports = new GraphQLObjectType({
                         motivation: args.motivation,
                         total_points: 0
                     })
+                    console.log(newUser)
 
                     let validNewUser = await newUser.save( );
 
@@ -128,6 +133,111 @@ module.exports = new GraphQLObjectType({
                 existingUser.access_token = token
                 return  existingUser;
             }
+        },
+
+        // Mutation to Add New Goal to DB for given User
+            //other functions needed could be name
+            // completeGoalForUser
+            // deleteGoalForUser
+        addGoalForUser: {
+            type: GoalType,
+            description: 'Add a Single Goal',
+            args: {
+                userid: {
+                    type: new GraphQLNonNull(GraphQLID),
+                    description: "Userid of the user"
+                },
+                name: {
+                    type: new GraphQLNonNull(GraphQLString),
+                    description: "Email of the user"
+                },
+                is_target_type: {
+                    type: new GraphQLNonNull(GraphQLBoolean),
+                    description: "Password of the user"
+                },
+                target_amount_goal: {
+                    type: GraphQLInt,
+                    description: "Dream Job of the user"
+                },
+                target_unit: {
+                    type: GraphQLString,
+                    description: "Motivation for the user to get this job"
+                },
+                target_amount_completed: {
+                    type: GraphQLInt,
+                    description: "Total Point gained by the user for completing Goals"
+                },
+                points: {
+                    type: GraphQLInt,
+                    description: "Motivation for the user to get this job"
+                }
+            },
+            async resolve(parent, args) {
+                try {
+                    //create new user - MongoDB config in OSX will prevent users being created with an existing email or username
+                    // ToDo - configure MongoDB in Atlas to prevent duplicates
+                    console.log('inside addGoalForUser')
+                    
+                    // BUG NOT WORKING - doesnot work with or wihtout userid
+                    let newGoal = await new GoalModel({
+                        userid: args.userid,
+                        name: args.name,
+                        is_target_type: args.is_target_type,
+                        target_amount_goal: args.target_amount_goal,
+                        target_unit: args.target_unit,
+                        target_amount_completed: args.target_amount_completed,
+                        points: args.points,
+                        is_completed: false,
+                        is_deleted: false
+                    })
+                        // date_created: new Date;
+                        // doc.createdAt instanceof Date
+                    if (!newGoal) {
+                        throw new Error(`new goal not valid, with name  ${args.name}`)
+                    }
+                    //this never gets printed out
+                    console.log('new goal: ')
+                    console.log(newGoal)
+
+                    //dates shoudl be auto handled by mongoose ie createdAt and updatedAt 
+
+                    //4Feb does this return boolean, rather than the saved object?
+                    let validNewGoal = await newGoal.save( );
+                    
+                    // this works to save doc but also triggers catch block to return error to GQL console
+                    // let validNewGoal = await newGoal.save(function() {
+                    //     console.log("MY Document inserted succussfully!");
+                    // });
+
+                    // let validNewGoal = await newGoal.save(function(err, doc) {
+                    //   if (err) return console.error(err);
+                    //   console.log("GOAL Document inserted succussfully!");
+                    // });
+
+                    //  Todo - need to test/force this error message ie what might prevent new user from saving?
+                    //where am i actuallly preventing a user with same email address from being registered??
+                    if (!validNewGoal) {
+                        throw new Error(`Could not save new goal for user with goal name ${args.name}`)
+                    }
+
+                    //do i need tokens for goals? assume NOT
+                    // log the new user in and give them a new jwtoken - what is sub for ??
+                    // let token = jsonwebtoken.sign({
+                    //         sub: newUser.id,
+                    //         email: newUser.email
+                    //     }, AUTH_SECRET,{
+                    //         expiresIn: '3 hours'
+                    //     })
+
+                    // //return new user here, with token inside
+                    // newUser.access_token = token;
+                    return newGoal; 
+                }
+                catch(err) {
+                    return new Error(`Could not add new goal for user with goal name ${args.name}`)
+                }
+            }
         }
+
     }
 });
