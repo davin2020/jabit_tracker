@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const { graphqlHTTP } = require('express-graphql');
@@ -11,23 +13,33 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-const DB_USERNAME = 'YOUR_USERNAME';
-const DB_PASSWORD = 'YOUR_PASSWORD';
-const DB_NAME = 'YOUR_DB_NAME';
-const AUTH_SECRET = 'YOUR_SECRET';
+//read from local .env file or Env Config Vars in Heroku Prod deployment
+const DB_NAME = process.env.DB_NAME;
+const AUTH_SECRET = process.env.JWT_SECRET; 
+console.log(`Your port is ${process.env.PORT}`);
 
-//change these connectionDetails according to your MongoDB instance eg if using cloud DB like Atlas or localhost
-//for atlas cloud db, but not working, need to use right protocol ie mongdb+srv !
-const connectionDetails = 'mongodb+srv://' + DB_USERNAME + ':' + DB_PASSWORD + '@cluster0.ajaya.mongodb.net/' + DB_NAME ;
-
-
-mongoose.connect(connectionDetails, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: DB_NAME,
-    //to get rid of deprecated warnings and to use findOneAndUpdate
-    useFindAndModify: false
-})
+//for now always connect to Prod ie cloud db
+if (process.env.NODE_ENV === 'production') {
+    console.log('Connected to PROD Atlas Cloud DB');
+    // console.log(process.env.MONGODB_URI);
+    mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        dbName: DB_NAME,
+        //to get rid of deprecated warnings and to use findOneAndUpdate
+        useFindAndModify: false,
+    }) 
+} 
+else {
+    console.log('Connected to dev but using same cloud Atlas DB');
+    mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        dbName: DB_NAME,
+        //to get rid of deprecated warnings and to use findOneAndUpdate
+        useFindAndModify: false,
+    }) 
+}
     //LATER check out these other optoins too
     // keepAlive: true,
     // useNewUrlParser: true,
@@ -46,8 +58,9 @@ const jwtAuth = expressjwt( {
 
 app.use(jwtAuth);
 
-// this is the URL & port from the Knowsys UI repo
-app.use(cors({origin: "http://localhost:3033"}));
+// allow CORS from any URL, so Heroku deployment works
+app.use(cors());
+// app.use(cors({origin: "http://localhost:3033"}));
 
 app.use('/graphql', graphqlHTTP({
     schema: require('./schema.js'),
@@ -67,22 +80,29 @@ app.use('/graphql', graphqlHTTP({
         },
 }))
 
-//only users with jwt should be able to access this page
-// app.use('/user', bodyParser.json(), jwtAuth, graphqlHTTP(req => ({
-//         schema: require('./schema.js'),
-//         context: {
-//             user: req.user
-//         }
-//     }))
-// )
+// only users with jwt should be able to access this page
+app.use('/dashboard', bodyParser.json(), jwtAuth, graphqlHTTP(req => ({
+        schema: require('./schema.js'),
+        context: {
+            user: req.user
+        }
+    }))
+)
 
-// app.use('/api', bodyParser.json(), jwtAuth, graphqlHTTP(req => ({
-//     schema: require('./schema.js'),
-//         context: {
-//             user: req.user
-//         }
-//     }))
-// )
+app.use('/api', bodyParser.json(), jwtAuth, graphqlHTTP(req => ({
+    schema: require('./schema.js'),
+        context: {
+            user: req.user
+        }
+    }))
+)
 
-app.listen(4033);
-console.log('Running a GraphQL API server at http://localhost:4033/graphql');
+//to test in Prod
+app.get('/', function (req, res) {
+  res.send('Jabit Tracker API - Hello World!')
+})
+
+const PORT = process.env.PORT || 4033;
+app.listen(PORT, () => {
+  console.warn(`Running a GraphQL API server at http://localhost:${PORT}/graphql`);
+});
