@@ -2,6 +2,8 @@ const graphql = require('graphql');
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
 
+require('dotenv').config();
+
 //this is allowable data types in mutations below
 const {
     GraphQLObjectType,
@@ -13,7 +15,7 @@ const {
     GraphQLBoolean
 } = graphql;
 
-const AUTH_SECRET = 'YOUR_SECRET';
+const AUTH_SECRET = process.env.JWT_SECRET;
 
 // GraphQL Types
 const UserType = require('../graphqlTypes/UserType');
@@ -87,6 +89,7 @@ module.exports = new GraphQLObjectType({
                             expiresIn: '3 hours'
                         })
 
+                    console.log('new user token is: ' + token);
                     //return new user here, with token inside
                     newUser.access_token = token;
                     return newUser; 
@@ -121,7 +124,7 @@ module.exports = new GraphQLObjectType({
                 }
                 const validPassword = await bcrypt.compare(args.password, existingUser.password)
                 if (!validPassword) {
-                    throw new Error('Incorrect password, please try again')
+                    throw new Error('Incorrect username or password, please try again')
                 }
                 //login the existing user by giving them a new jwtoken
                 let token = jsonwebtoken.sign({
@@ -130,6 +133,7 @@ module.exports = new GraphQLObjectType({
                         }, AUTH_SECRET,{
                         expiresIn: '3 hours'
                     })
+                console.log('existing user token is: ' + token);
                 existingUser.access_token = token
                 return  existingUser;
             }
@@ -295,6 +299,6 @@ module.exports = new GraphQLObjectType({
     }
 })
 
-// also need t hese mutations
+// also need these mutations
 // completeGoalForUser
 // deleteeGoalForUser
