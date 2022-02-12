@@ -1,34 +1,14 @@
 [{
   "_id": {
-    "$oid": "61fc2012724476ee8ae8a261"
-  },
-  "email": "test_marty@example.com",
-  "fullname": "Marty McFly",
-  "password": "",
-  "total_points": 0,
-  "dream_job": "delorean racing car driver",
-  "motivation": "going back to the future"
-},{
-  "_id": {
-    "$oid": "61fc2082724476ee8ae8a262"
-  },
-  "email": "davin@example.com",
-  "password": "",
-  "fullname": "Davin Jaqobis",
-  "dream_job": "Full Stack Developer",
-  "motivation": "to be creative and make heaps of money",
-  "total_points": 22
-},{
-  "_id": {
     "$oid": "61fc4fcb0a666a252c847b5a"
   },
-  "email": "whisky@example.com",
+  "email": "demo_user@example.com",
   "password": "$2b$10$dv8BcaULNsjHAn6JzWbckeEeQzBeKqW6rYnDcqhNUSH9fMOo2kZaG",
-  "dream_job": "Trysail  b rum gangway",
-  "motivation": "Sail ho Corsair red ensign hulk smartly boom ji",
+  "dream_job": "Unicorn",
+  "motivation": "Its more attainable than being a 10x Developer",
   "total_points": 0,
   "__v": 0,
-  "fullname": "Whiskey Galore"
+  "fullname": "Demo User"
 },{
   "_id": {
     "$oid": "61fc511f67cde45b3477dfd9"
@@ -44,78 +24,12 @@
   "_id": {
     "$oid": "61fe62f13a82812e8c5bf616"
   },
-  "email": "testme@example.com",
-  "fullname": "testme",
+  "email": "davin@example.com",
+  "fullname": "Davin Jaqobis",
   "password": "$2b$10$nbzrZLqSM.mltCBwyQOtY.etAjBO/.f07Wxo3TqSs5VpDYInKOUhe",
-  "dream_job": "Trysail  b rum gangway",
-  "motivation": "Sail ho Corsair red ensign hulk smartly boom ji",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61fe68ac3a82812e8c5bf618"
-  },
-  "email": "dfgdfg",
-  "fullname": "",
-  "password": "$2b$10$ocBVph9o66FDMSR6qVg6n.9Bb0bSp0pHOYG8306PIPjKqOS5QXD2.",
-  "dream_job": "dgfg",
-  "motivation": "dfgdfg",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61fe6a693a82812e8c5bf61c"
-  },
-  "email": "mytest@example.com",
-  "fullname": "My Test",
-  "password": "$2b$10$dNWIohqVirU8snVh2e1mhu6ViISD4JJ.9qHWTt.8Zj6ktBGCCKa6C",
-  "dream_job": "my dream job",
-  "motivation": " my motivation",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61fe70547b1fca5090d6f800"
-  },
-  "email": "mytest2@example.com",
-  "fullname": "gdfgdfg",
-  "password": "$2b$10$FB4VbGu1uJJvPx7ZAsUiq.DWAxVz0268.3w7jrjTBixyJpSb857H.",
-  "dream_job": "dgdfgfg",
-  "motivation": "dgdgfdg",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61fe71a27b1fca5090d6f802"
-  },
-  "email": "mytes33t@example.com",
-  "fullname": "hfhdgh",
-  "password": "$2b$10$ynlqFPa3SReFdwvTKutWvuWo.bkJnH7nKlI0jEc8TxmOEzAhkkaFa",
-  "dream_job": "fhfgh",
-  "motivation": "fghfgh",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61fe725c7b1fca5090d6f804"
-  },
-  "email": "mytest4@example.com",
-  "fullname": "guytutyu",
-  "password": "$2b$10$ivbmynrMp1SZnJY4lrF1Q.brVb.FiJQ0PRiF0UBKs7aIoxRfg5MMy",
-  "dream_job": "yuty",
-  "motivation": "utyutyu",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61fe73f27b1fca5090d6f807"
-  },
-  "email": "mytest5@example.com",
-  "fullname": "My Test 5",
-  "password": "$2b$10$wlVLco1eUNBPpthRb6jA6OW7csqg875PopSZTRoxwm0sPovcdfnAS",
-  "dream_job": "test5",
-  "motivation": "test5",
-  "total_points": 0,
+  "dream_job": "Full Stack Developer",
+  "motivation": "to be creative and make heaps of mone",
+  "total_points": 22,
   "__v": 0
 },{
   "_id": {
@@ -137,50 +51,6 @@
   "password": "$2b$10$cN0aZREXJZfmIMW6tpDWeOJlnMCkgfVKh8BB5cb0z9KbkBN337d5W",
   "dream_job": "Time Travller",
   "motivation": "Going back to the future with Clara",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61ffdaa92891f80016d7f91e"
-  },
-  "email": "tristan@troopl.com",
-  "fullname": "Tristan",
-  "password": "$2b$10$jdmtW.TQpHp8bDtT5hQPiu0skbXCf8hnaw5nf0FthDA.QR/XrmOU2",
-  "dream_job": "Working for Google X",
-  "motivation": "They're solving the some of the world's hariest problems with unlimited resources.",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61ffdaaa2891f80016d7f922"
-  },
-  "email": "joubran.jad@gmail.com",
-  "fullname": "jad jo",
-  "password": "$2b$10$obOQgsA6Up3IrIRYq7pk6eKH5D8mdY/tGFLzY/HHQKUAHAgIcK0fC",
-  "dream_job": "test",
-  "motivation": "test",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61ffe4290290ac0016d38209"
-  },
-  "email": "gilberto@email.com",
-  "fullname": "Gilberto Toto",
-  "password": "$2b$10$YS1DmHsao3ubLULl0uw6M.eBBZ1TpNXuZF6jgDtdL.xFdx60WEt8e",
-  "dream_job": "Web Dev and independent Online shop",
-  "motivation": "freedom to create and possibility to be flexible",
-  "total_points": 0,
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "61ffec480290ac0016d3820d"
-  },
-  "email": "asdasd@asdasd.com",
-  "fullname": "sdasd",
-  "password": "$2b$10$f2EaTIPQVcF6agn/VIqNguz7FB8uMeG5haFnpF3tzapkkqoXKKpSW",
-  "dream_job": "asdasd",
-  "motivation": "sdasd",
   "total_points": 0,
   "__v": 0
 }]
