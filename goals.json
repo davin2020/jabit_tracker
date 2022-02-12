@@ -1,0 +1,264 @@
+[{
+  "_id": {
+    "$oid": "61fc5c7b2b26e1da9123ff9d"
+  },
+  "userid": {
+    "$oid": "61ff12e7ff1dd30016dcd4e0"
+  },
+  "name": "apply for jobs",
+  "is_target_type": true,
+  "target_amount_goal": 10,
+  "target_unit": "applications",
+  "target_amount_completed": 5,
+  "points": 52,
+  "date_created": {
+    "$timestamp": {
+      "t": 0,
+      "i": 0
+    }
+  },
+  "is_completed": false,
+  "date_completed": {
+    "$timestamp": {
+      "t": 0,
+      "i": 0
+    }
+  },
+  "is_deleted": false,
+  "updatedAt": {
+    "$date": "2022-02-04T17:01:46.975Z"
+  }
+},{
+  "_id": {
+    "$oid": "61fc5e83e868a945642d1a7b"
+  },
+  "userid": {
+    "$oid": "61fc4fcb0a666a252c847b5a"
+  },
+  "name": "attend interview",
+  "is_target_type": true,
+  "target_amount_goal": 3,
+  "target_unit": "interviews",
+  "target_amount_completed": 1,
+  "points": 16,
+  "date_created": {
+    "$timestamp": {
+      "t": 0,
+      "i": 0
+    }
+  },
+  "is_completed": false,
+  "date_completed": {
+    "$timestamp": {
+      "t": 0,
+      "i": 0
+    }
+  },
+  "is_deleted": false,
+  "updatedAt": {
+    "$date": "2022-02-04T17:02:03.924Z"
+  }
+},{
+  "_id": {
+    "$oid": "61fc6c1de868a945642d1a7c"
+  },
+  "userid": {
+    "$oid": "61fc4fcb0a666a252c847b5a"
+  },
+  "name": "doing tech tests",
+  "is_target_type": true,
+  "target_amount_goal": 2,
+  "target_unit": "tests",
+  "target_amount_completed": 1,
+  "points": 5,
+  "date_created": {
+    "$timestamp": {
+      "t": 0,
+      "i": 0
+    }
+  },
+  "is_completed": false,
+  "date_completed": {
+    "$timestamp": {
+      "t": 0,
+      "i": 0
+    }
+  },
+  "is_deleted": false
+},{
+  "_id": {
+    "$oid": "61fd46de320eec087494724a"
+  },
+  "name": "searching online ads for unicornt",
+  "is_target_type": false,
+  "target_amount_goal": 40,
+  "target_unit": "ads",
+  "target_amount_completed": 10,
+  "points": 55,
+  "is_completed": false,
+  "is_deleted": false,
+  "createdAt": {
+    "$date": "2022-02-04T15:31:43.013Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-04T15:31:43.013Z"
+  },
+  "__v": 0,
+  "userid": {
+    "$oid": "61fc4fcb0a666a252c847b5a"
+  }
+},{
+  "_id": {
+    "$oid": "61fd474928e35640cc411295"
+  },
+  "userid": {
+    "$oid": "61fc511f67cde45b3477dfd9"
+  },
+  "name": "Apply for jobs as Racecar Driver",
+  "is_target_type": false,
+  "target_amount_goal": 10,
+  "target_unit": "Jobs",
+  "target_amount_completed": 15,
+  "points": 5,
+  "is_completed": false,
+  "is_deleted": false,
+  "createdAt": {
+    "$date": "2022-02-04T15:33:29.089Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-04T15:33:29.089Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61fd4863ca1f5505a469a3ab"
+  },
+  "userid": {
+    "$oid": "61ff12e7ff1dd30016dcd4e0"
+  },
+  "name": "test sierra",
+  "is_target_type": false,
+  "target_amount_goal": 20,
+  "target_unit": "hello",
+  "target_amount_completed": 5,
+  "points": 5,
+  "is_completed": false,
+  "is_deleted": false,
+  "createdAt": {
+    "$date": "2022-02-04T15:38:11.536Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-04T15:38:11.536Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61fd49bd5675d33ef85a7c27"
+  },
+  "userid": {
+    "$oid": "61fc511f67cde45b3477dfd9"
+  },
+  "name": "Attend Race Car Driving Tests",
+  "is_target_type": false,
+  "target_amount_goal": 10,
+  "target_unit": "Tests",
+  "target_amount_completed": 2,
+  "points": 10,
+  "is_completed": false,
+  "is_deleted": false,
+  "createdAt": {
+    "$date": "2022-02-04T15:43:57.430Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-04T15:43:57.430Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61fd4a1d81bcf331d0322523"
+  },
+  "userid": {
+    "$oid": "61fe62f13a82812e8c5bf616"
+  },
+  "name": "test sierra new new new",
+  "is_target_type": false,
+  "target_amount_goal": 20,
+  "target_unit": "hello",
+  "target_amount_completed": 5,
+  "points": 5,
+  "is_completed": false,
+  "is_deleted": false,
+  "createdAt": {
+    "$date": "2022-02-04T15:45:34.076Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-04T15:45:34.076Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61fd4d16ff616e3cacdf229d"
+  },
+  "userid": {
+    "$oid": "61fe62f13a82812e8c5bf616"
+  },
+  "name": "test sierra friday",
+  "is_target_type": false,
+  "target_amount_goal": 20,
+  "target_unit": "hello",
+  "target_amount_completed": 5,
+  "points": 5,
+  "is_completed": false,
+  "is_deleted": false,
+  "createdAt": {
+    "$date": "2022-02-04T15:58:14.987Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-04T15:58:14.987Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61fd507cd33ea6371ccfda5a"
+  },
+  "userid": {
+    "$oid": "61fe62f13a82812e8c5bf616"
+  },
+  "name": "sierra friday",
+  "is_target_type": false,
+  "target_amount_goal": 25,
+  "target_unit": "hello",
+  "target_amount_completed": 10,
+  "points": 5,
+  "is_completed": false,
+  "is_deleted": false,
+  "createdAt": {
+    "$date": "2022-02-04T16:12:44.254Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-04T16:12:44.254Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ffc77028f64948746b1d07"
+  },
+  "userid": {
+    "$oid": "61fc511f67cde45b3477dfd9"
+  },
+  "name": "Attending Race Car Driver Interviews",
+  "is_target_type": false,
+  "target_amount_goal": 15,
+  "target_unit": "Interviews",
+  "target_amount_completed": 0,
+  "points": 5,
+  "is_completed": false,
+  "is_deleted": false,
+  "createdAt": {
+    "$date": "2022-02-06T13:04:48.168Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-06T13:04:48.168Z"
+  },
+  "__v": 0
+}]

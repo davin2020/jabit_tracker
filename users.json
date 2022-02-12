@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "61fc4fcb0a666a252c847b5a"
+  },
+  "email": "demo_user@example.com",
+  "password": "$2b$10$dv8BcaULNsjHAn6JzWbckeEeQzBeKqW6rYnDcqhNUSH9fMOo2kZaG",
+  "dream_job": "Unicorn",
+  "motivation": "Its more attainable than being a 10x Developer",
+  "total_points": 0,
+  "__v": 0,
+  "fullname": "Demo User"
+},{
+  "_id": {
+    "$oid": "61fc511f67cde45b3477dfd9"
+  },
+  "email": "marty@example.com",
+  "fullname": "Marty McFly",
+  "password": "$2b$10$1C30PmU34JHbvnziO7xYUOwRgP1uvcMLFovK0QlkytYmA7KgPwN9q",
+  "dream_job": "Timetravelling DeLorean Racecar Driver",
+  "motivation": "Going back to the Future. Time travel rocks!",
+  "total_points": 88,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61fe62f13a82812e8c5bf616"
+  },
+  "email": "davin@example.com",
+  "fullname": "Davin Jaqobis",
+  "password": "$2b$10$nbzrZLqSM.mltCBwyQOtY.etAjBO/.f07Wxo3TqSs5VpDYInKOUhe",
+  "dream_job": "Full Stack Developer",
+  "motivation": "to be creative and make heaps of mone",
+  "total_points": 22,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ff12e7ff1dd30016dcd4e0"
+  },
+  "email": "sierra@example.com",
+  "fullname": "Sierra Zulu",
+  "password": "$2b$10$UIfQKw2wM2fuBRt7pCV1teGhZTr7/ieJOL/fIH6.QRByhRcuHfuWC",
+  "dream_job": "phonetic alphabet",
+  "motivation": "learn all the letters",
+  "total_points": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ffc83f28f64948746b1d09"
+  },
+  "email": "docbrown@example.com",
+  "fullname": "Doc Brown",
+  "password": "$2b$10$cN0aZREXJZfmIMW6tpDWeOJlnMCkgfVKh8BB5cb0z9KbkBN337d5W",
+  "dream_job": "Time Travller",
+  "motivation": "Going back to the future with Clara",
+  "total_points": 0,
+  "__v": 0
+}]
