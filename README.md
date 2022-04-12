@@ -10,14 +10,14 @@ The idea behind this app is to keep track of job-seeking habits that you can con
 ## Live Demo
 Theres a demo available online at - https://jabit-tracker-ui.herokuapp.com/
 
-## Current Features
+## Current Features in Live Demo
 - Register a new account
 - Login an existing account
 - View your personal details on the Dashboard page
-![User Dashboard](jabit_tracker_dashboard.png)
+- View your goals on the Dashboard page - deployed to Heroku 12 April
+![Dashboard - User Profile and Goals](jabit_tracker_dashboard_goals.png)
 
 ## Coming Soon Features
-- View your goals on the dashboard
 - Add a new goal
 - Mark a goal as commpleted
 - Delete a goal
